@@ -12,7 +12,7 @@ Guía paso a paso para construir una página web institucional **estática**, de
 | **Framework** | Next.js 14+ (App Router) |
 | **Lenguaje** | TypeScript |
 | **Estilos / UI** | Tailwind CSS v4 + shadcn/ui |
-| **Fuente** | Geist (fuente por defecto de create-next-app) |
+| **Fuente** | Lato (Google Fonts) |
 | **Color primario** | `#2ab48a` (verde institucional) |
 | **Gráficos** | Reportes de Power BI embebidos vía iframe (URL pública "Publicar en la web") |
 | **Datos** | Contenido 100% estático (sin base de datos, sin API) |
@@ -295,23 +295,24 @@ export function PowerBIEmbed({
   ancho = 1024,
   alto = 1060,
 }: PowerBIEmbedProps) {
+  // Mantiene la proporción 1024:1060 en cualquier ancho (el reporte refluye al tamaño del iframe)
   return (
-    <div className="w-full overflow-x-auto">
+    <div
+      className="mx-auto w-full"
+      style={{ maxWidth: ancho, aspectRatio: `${ancho} / ${alto}` }}
+    >
       <iframe
         title={titulo}
         src={url}
-        width={ancho}
-        height={alto}
-        frameBorder={0}
         allowFullScreen
-        className="mx-auto max-w-full rounded-lg border border-border shadow-sm"
+        className="h-full w-full rounded-lg border border-border shadow-sm"
       />
     </div>
   );
 }
 ```
 
-> El reporte requiere un espacio de **1024 × 1060 px**. El contenedor permite scroll horizontal en pantallas pequeñas para no romper el diseño.
+> El reporte se dise\u00f1\u00f3 para **1024 \u00d7 1060 px**. El contenedor conserva esa proporci\u00f3n (`aspect-ratio`) y se limita a `1024px` de ancho; en pantallas menores escala manteniendo la relaci\u00f3n y Power BI reajusta su contenido.
 
 ---
 
@@ -543,13 +544,17 @@ export function Header() {
 
 ```tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Lato, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/layout/sidebar";
 import { Header } from "@/components/layout/header";
 
-// Fuente por defecto de create-next-app (Geist)
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+// Fuente principal del sitio (Lato). Se expone como --font-sans para Tailwind
+const lato = Lato({
+  variable: "--font-sans",
+  weight: ["400", "700", "900"],
+  subsets: ["latin"],
+});
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -582,7 +587,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${lato.variable} ${geistMono.variable} font-sans antialiased`}>
         <div className="flex min-h-screen">
           <Sidebar />
           <div className="flex flex-1 flex-col">
