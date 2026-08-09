@@ -42,6 +42,30 @@ export const reportes: ReportePowerBI[] = [
     ancho: 1024,
     alto: 620,
   },
+  {
+    slug: "medicamentos",
+    titulo: "Medicamentos",
+    descripcion: "Indicadores de fórmulas y medicamentos despachados.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiNGY2NTFkYTQtY2U3YS00OTdiLThmM2ItYzM4YTVmMzIzYjM2IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
+    ancho: 1024,
+    alto: 620,
+  },
+  {
+    slug: "rayos-x",
+    titulo: "Rayos X",
+    descripcion: "Indicadores de producción del servicio de rayos X.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiNDMwMjFiNTktYzFjMi00YTk4LTkyOWMtNzQyNDgwYjQyNTFjIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
+    ancho: 1024,
+    alto: 620,
+  },
+  {
+    slug: "urgencias",
+    titulo: "Urgencias",
+    descripcion: "Indicadores de producción del servicio de urgencias.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiMDIzMjA5ZjQtYWY5MS00MzFhLTg2OGUtZTY5MjIxZTAyYWRmIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
+    ancho: 1024,
+    alto: 620,
+  },
 ];
 
 export function getReporte(slug: string) {
