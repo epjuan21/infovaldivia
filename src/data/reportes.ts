@@ -26,6 +26,22 @@ export const reportes: ReportePowerBI[] = [
     ancho: 1024,
     alto: 620,
   },
+  {
+    slug: "egresos",
+    titulo: "Egresos",
+    descripcion: "Indicadores de egresos hospitalarios de la institución.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiODNlNjQ5NTctZmUxNC00ZjY3LWI1ODQtYTZiNGMwZTUzNGQwIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
+    ancho: 1024,
+    alto: 620,
+  },
+  {
+    slug: "laboratorio",
+    titulo: "Laboratorio",
+    descripcion: "Indicadores de producción del servicio de laboratorio.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiYzI1YTBmOTctY2MyMC00OTJkLWI3NTgtMWMxMTYzMjE1YjZlIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
+    ancho: 1024,
+    alto: 620,
+  },
 ];
 
 export function getReporte(slug: string) {

@@ -23,6 +23,8 @@ export const navigation: NavItem[] = [
         children: [
           { title: "Procedimientos PyM", href: "/graficos/procedimientos-pym" },
           { title: "Consultas", href: "/graficos/consultas" },
+          { title: "Egresos", href: "/graficos/egresos" },
+          { title: "Laboratorio", href: "/graficos/laboratorio" },
         ],
       },
     ],
