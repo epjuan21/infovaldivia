@@ -3,6 +3,7 @@ import { Lato, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/layout/sidebar";
 import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 const lato = Lato({
   variable: "--font-sans",
@@ -48,11 +49,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${lato.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full font-sans">
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen bg-[#f4f8f6]">
           <Sidebar />
-          <div className="flex flex-1 flex-col">
+          <div className="flex min-w-0 flex-1 flex-col">
             <Header />
-            <main className="flex-1 p-6">{children}</main>
+            <main className="flex-1 px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-10">
+              {children}
+            </main>
+            <Footer />
           </div>
         </div>
       </body>

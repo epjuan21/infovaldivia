@@ -223,10 +223,15 @@ export const navigation: NavItem[] = [
     title: "Gráficos",
     icon: BarChart3,
     children: [
-      // ⭐ Agrega aquí nuevos submenús/reportes en el futuro
-      { title: "Indicadores Generales", href: "/graficos/indicadores-generales" },
-      // { title: "Urgencias", href: "/graficos/urgencias" },
-      // { title: "Consulta Externa", href: "/graficos/consulta-externa" },
+      {
+        title: "Producción",
+        children: [
+          // ⭐ Agrega aquí nuevas páginas de producción en el futuro
+          { title: "Procedimientos PyM", href: "/graficos/procedimientos-pym" },
+          // { title: "Consulta Externa", href: "/graficos/consulta-externa" },
+        ],
+      },
+      // ⭐ Puedes agregar más subgrupos aquí (p. ej. "Urgencias")
     ],
   },
   // ⭐ Para un nuevo menú de primer nivel en el futuro:
@@ -239,6 +244,8 @@ export const navigation: NavItem[] = [
 ```
 
 > `lucide-react` ya viene con shadcn/ui. Elige íconos en [lucide.dev](https://lucide.dev/icons).
+
+> **Submenús anidados:** un `NavItem` con `children` puede a su vez contener `children`, por lo que puedes anidar tantos niveles como necesites (p. ej. `Gráficos → Producción → Procedimientos PyM`). El sidebar detecta la ruta activa de forma **recursiva** y auto-expande la rama correspondiente.
 
 ---
 
@@ -260,12 +267,13 @@ export type ReportePowerBI = {
 
 export const reportes: ReportePowerBI[] = [
   {
-    slug: "indicadores-generales",
-    titulo: "Indicadores Generales",
-    descripcion: "Panorama general de indicadores institucionales.",
+    slug: "procedimientos-pym",
+    titulo: "Procedimientos PyM",
+    descripcion: "Indicadores de producción de procedimientos PyM.",
     url: "https://app.powerbi.com/view?r=eyJrIjoiMmMxZmViZDktZTVhOC00Zjg1LTgxYjEtYWE1YmFmNDMwNTA2IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
-    alto: 1060,
+    // Altura real del reporte (ajústala si sobra/falta espacio vertical)
+    alto: 620,
   },
   // ⭐ Agrega aquí nuevos reportes copiando este bloque
 ];
@@ -480,7 +488,14 @@ export function Sidebar() {
   return (
     <aside className="hidden w-64 shrink-0 border-r border-border bg-card md:block">
       <div className="flex h-16 items-center gap-2 border-b border-border px-4">
-        <Image src="/logo.png" alt="ESE Hospital San Juan de Dios" width={40} height={40} />
+        <Image
+          src="/logo.png"
+          alt="ESE Hospital San Juan de Dios"
+          width={4041}
+          height={1758}
+          priority
+          className="h-10 w-auto"
+        />
         <span className="text-sm font-semibold leading-tight">
           ESE Hospital San Juan de Dios
         </span>
@@ -490,6 +505,8 @@ export function Sidebar() {
   );
 }
 ```
+
+> **Logo con `next/image`:** usa las dimensiones **reales** del archivo en `width`/`height` (para conservar la proporción) y controla el tamaño visible por CSS fijando **solo una** dimensión (`h-10 w-auto`). Si fijas ambas o solo una sin `auto`, Next mostrará el aviso *"width or height modified, but not the other"*.
 
 `src/components/layout/header.tsx` (barra superior con menú móvil):
 
@@ -639,8 +656,12 @@ export default function HomePage() {
 
 ### ➕ Agregar un nuevo reporte de Power BI (submenú de "Gráficos")
 1. En `src/data/reportes.ts`, agrega un objeto al arreglo `reportes` con su `slug`, `titulo` y `url`.
-2. En `src/config/navigation.ts`, agrega un `child` en el menú "Gráficos" con `href: "/graficos/<slug>"`.
-3. Listo. La página se genera automáticamente.
+2. En `src/config/navigation.ts`, agrega un `child` dentro del subgrupo correspondiente (p. ej. "Producción") con `href: "/graficos/<slug>"`.
+3. Ajusta `alto` en `reportes.ts` hasta que el reporte encaje sin espacio vertical sobrante.
+4. Listo. La página se genera automáticamente.
+
+### ➕ Agregar un nuevo subgrupo dentro de "Gráficos"
+1. En `src/config/navigation.ts`, agrega dentro de los `children` de "Gráficos" un nuevo objeto con `title` y su propio arreglo `children`.
 
 ### ➕ Agregar un nuevo menú de primer nivel
 1. En `src/config/navigation.ts`, agrega un nuevo objeto a `navigation` (con `href` o con `children`).

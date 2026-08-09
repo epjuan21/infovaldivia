@@ -49,24 +49,24 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #f4f8f6;
+  --foreground: #18332e;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #2ab48a;
+  --primary: #16886b;
   --primary-foreground: #ffffff;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --muted: #eaf1ee;
+  --muted-foreground: #58716c;
+  --accent: #e1f3ec;
+  --accent-foreground: #18332e;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: #d9e7e2;
+  --input: #cbdcd6;
+  --ring: #16886b;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -126,5 +126,28 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer components {
+  .home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto auto;
+    width: 42%;
+    height: 0.375rem;
+    background: #f6c85f;
+  }
+
+  .home-hero::after {
+    content: "+";
+    position: absolute;
+    right: -1rem;
+    bottom: -8rem;
+    color: rgb(255 255 255 / 0.04);
+    font-size: 30rem;
+    font-weight: 900;
+    line-height: 1;
+    pointer-events: none;
   }
 }

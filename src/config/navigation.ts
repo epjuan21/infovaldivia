@@ -18,8 +18,13 @@ export const navigation: NavItem[] = [
     title: "Gráficos",
     icon: BarChart3,
     children: [
-      // Agrega aquí nuevos submenús/reportes en el futuro
-      { title: "Indicadores Generales", href: "/graficos/indicadores-generales" },
+      {
+        title: "Producción",
+        children: [
+          { title: "Procedimientos PyM", href: "/graficos/procedimientos-pym" },
+          { title: "Consultas", href: "/graficos/consultas" },
+        ],
+      },
     ],
   },
 ];
