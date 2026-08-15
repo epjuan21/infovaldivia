@@ -66,6 +66,30 @@ export const reportes: ReportePowerBI[] = [
     ancho: 1024,
     alto: 620,
   },
+  {
+    slug: "procedimientos-odontologia",
+    titulo: "Procedimientos Odontología",
+    descripcion: "Indicadores de procedimientos del servicio de odontología.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiMTZmYjBmMzAtMmQzOC00MTlhLTgyNGItY2E1NjcxZjFjYTQ0IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
+    ancho: 1024,
+    alto: 620,
+  },
+  {
+    slug: "coosalud",
+    titulo: "Coosalud",
+    descripcion: "Indicadores de cobertura de Coosalud.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiNWYyMDc0ODUtMzUzOC00MWRkLWI3NzYtYTY0NDU5MWRlNWU4IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9&embedImagePlaceholder=true",
+    ancho: 1024,
+    alto: 620,
+  },
+  {
+    slug: "triage",
+    titulo: "Triage",
+    descripcion: "Indicadores de oportunidad de triage.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiY2QwZGVkODEtZjBjMC00MTJhLThiZmEtOTFkYzdhOTgzMzIzIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
+    ancho: 1024,
+    alto: 620,
+  },
 ];
 
 export function getReporte(slug: string) {

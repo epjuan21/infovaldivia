@@ -28,7 +28,19 @@ export const navigation: NavItem[] = [
           { title: "Medicamentos", href: "/graficos/medicamentos" },
           { title: "Rayos X", href: "/graficos/rayos-x" },
           { title: "Urgencias", href: "/graficos/urgencias" },
+          {
+            title: "Procedimientos Odontología",
+            href: "/graficos/procedimientos-odontologia",
+          },
         ],
+      },
+      {
+        title: "Coberturas",
+        children: [{ title: "Coosalud", href: "/graficos/coosalud" }],
+      },
+      {
+        title: "Oportunidad",
+        children: [{ title: "Triage", href: "/graficos/triage" }],
       },
     ],
   },
