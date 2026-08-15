@@ -5,6 +5,7 @@ export type ReportePowerBI = {
   url: string; // URL "Publicar en la web" de Power BI Service
   ancho?: number; // px (por defecto 1024)
   alto?: number; // px (por defecto 1060)
+  categoria: string; // Categoría del reporte (Producción, Coberturas, Oportunidad)
 };
 
 export const reportes: ReportePowerBI[] = [
@@ -14,8 +15,8 @@ export const reportes: ReportePowerBI[] = [
     descripcion: "Indicadores de producción de procedimientos PyM.",
     url: "https://app.powerbi.com/view?r=eyJrIjoiMmMxZmViZDktZTVhOC00Zjg1LTgxYjEtYWE1YmFmNDMwNTA2IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
-    // Altura real del reporte (ajústala si sobra/falta espacio vertical)
     alto: 620,
+    categoria: "Producción",
   },
   {
     slug: "consultas",
@@ -25,6 +26,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiY2EyNDAwODctZDAzYS00NTg0LTllMWUtOGJjMDY3MGNjNDc3IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Producción",
   },
   {
     slug: "egresos",
@@ -33,6 +35,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiODNlNjQ5NTctZmUxNC00ZjY3LWI1ODQtYTZiNGMwZTUzNGQwIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Producción",
   },
   {
     slug: "laboratorio",
@@ -41,6 +44,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiYzI1YTBmOTctY2MyMC00OTJkLWI3NTgtMWMxMTYzMjE1YjZlIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Producción",
   },
   {
     slug: "medicamentos",
@@ -49,6 +53,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiNGY2NTFkYTQtY2U3YS00OTdiLThmM2ItYzM4YTVmMzIzYjM2IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Producción",
   },
   {
     slug: "rayos-x",
@@ -57,6 +62,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiNDMwMjFiNTktYzFjMi00YTk4LTkyOWMtNzQyNDgwYjQyNTFjIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Producción",
   },
   {
     slug: "urgencias",
@@ -65,6 +71,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiMDIzMjA5ZjQtYWY5MS00MzFhLTg2OGUtZTY5MjIxZTAyYWRmIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Producción",
   },
   {
     slug: "procedimientos-odontologia",
@@ -73,6 +80,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiMTZmYjBmMzAtMmQzOC00MTlhLTgyNGItY2E1NjcxZjFjYTQ0IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Producción",
   },
   {
     slug: "coosalud",
@@ -81,6 +89,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiNWYyMDc0ODUtMzUzOC00MWRkLWI3NzYtYTY0NDU5MWRlNWU4IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9&embedImagePlaceholder=true",
     ancho: 1024,
     alto: 620,
+    categoria: "Coberturas",
   },
   {
     slug: "triage",
@@ -89,6 +98,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiY2QwZGVkODEtZjBjMC00MTJhLThiZmEtOTFkYzdhOTgzMzIzIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Oportunidad",
   },
   {
     slug: "consulta",
@@ -97,6 +107,7 @@ export const reportes: ReportePowerBI[] = [
     url: "https://app.powerbi.com/view?r=eyJrIjoiM2NmZTM5MzQtODg2NS00ZjFjLWE3MDUtZTMxOThkYzU3NWQzIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
     ancho: 1024,
     alto: 620,
+    categoria: "Oportunidad",
   },
 ];
 

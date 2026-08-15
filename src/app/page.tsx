@@ -26,13 +26,15 @@ export default function HomePage() {
               recursos de la ESE Hospital San Juan de Dios de Valdivia.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/graficos/procedimientos-pym"
+              <a
+                href="https://www.esehospitalsanjuandedios-valdivia-antioquia.gov.co/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-11 items-center gap-2 rounded-md bg-[#f6c85f] px-5 text-sm font-bold text-[#18332e] transition-colors hover:bg-[#ffda78] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                Ver indicadores
+                Ver Página Oficial
                 <ArrowRight className="size-4" aria-hidden="true" />
-              </Link>
+              </a>
               <Link
                 href="/graficos"
                 className="inline-flex h-11 items-center gap-2 rounded-md border border-white/25 px-5 text-sm font-bold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
