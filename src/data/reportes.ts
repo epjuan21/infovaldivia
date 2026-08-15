@@ -90,6 +90,14 @@ export const reportes: ReportePowerBI[] = [
     ancho: 1024,
     alto: 620,
   },
+  {
+    slug: "consulta",
+    titulo: "Consulta",
+    descripcion: "Indicadores de oportunidad de consulta.",
+    url: "https://app.powerbi.com/view?r=eyJrIjoiM2NmZTM5MzQtODg2NS00ZjFjLWE3MDUtZTMxOThkYzU3NWQzIiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9",
+    ancho: 1024,
+    alto: 620,
+  },
 ];
 
 export function getReporte(slug: string) {

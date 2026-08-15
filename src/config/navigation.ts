@@ -40,7 +40,10 @@ export const navigation: NavItem[] = [
       },
       {
         title: "Oportunidad",
-        children: [{ title: "Triage", href: "/graficos/triage" }],
+        children: [
+          { title: "Triage", href: "/graficos/triage" },
+          { title: "Consulta", href: "/graficos/consulta" },
+        ],
       },
     ],
   },
