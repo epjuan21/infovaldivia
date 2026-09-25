@@ -77,10 +77,10 @@ export const vacunas: VacunaFacturacion[] = [
   {
     codigoCups: "*993122-CPN",
     descripcion: "VACUNACIÓN COMBINADA DPAT MATERNAS",
-    cie10: "Z271",
-    descripcionCie10: "NECESIDAD DE INMUNIZACION CONTRA DIFTERIA-PERTUSSIS-TETANOS COMBINADOS [DPT]",
+    cie10: "Z238",
+    descripcionCie10: "NECESIDAD DE INMUNIZACION SOLO CONTRA OTRA ENFERMEDAD BACTERIANA",
     edadMinima: 0,
-    edadMaxima: 4,
+    edadMaxima: 999,
   },
   {
     codigoCups: "*993130",
