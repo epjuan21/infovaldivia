@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Home, BarChart3 } from "lucide-react";
+import { Home, ReceiptText, BarChart3 } from "lucide-react";
 
 export type NavItem = {
   title: string;
@@ -13,6 +13,14 @@ export const navigation: NavItem[] = [
     title: "Inicio",
     href: "/",
     icon: Home,
+  },
+  {
+    title: "Facturación",
+    icon: ReceiptText,
+    children: [
+      { title: "Higiene Oral", href: "/facturacion/higiene-oral" },
+      { title: "Vacunación", href: "/facturacion/vacunacion" },
+    ],
   },
   {
     title: "Gráficos",
