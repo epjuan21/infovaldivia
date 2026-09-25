@@ -1,5 +1,9 @@
+import { ShieldCheck } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
-import { procedimientosHigieneOral } from "@/data/facturacion";
+import {
+  finalidadHigieneOral,
+  procedimientosHigieneOral,
+} from "@/data/facturacion";
 
 export const metadata = { title: "Higiene Oral" };
 
@@ -16,8 +20,18 @@ export default function HigieneOralPage() {
         <p className="text-sm font-bold text-primary">Facturación</p>
         <PageHeader
           titulo="Higiene Oral"
-          descripcion="Códigos CUPS de los procedimientos realizados, clasificados por concepto y finalidad."
+          descripcion="Códigos CUPS de los procedimientos realizados, agrupados por concepto."
         />
+      </div>
+
+      <div className="flex items-center gap-3 border-l-4 border-primary bg-accent px-4 py-3 text-sm text-accent-foreground">
+        <ShieldCheck className="size-5 shrink-0 text-primary" aria-hidden="true" />
+        <p>
+          <span className="font-bold">
+            Finalidad para todos los procedimientos:
+          </span>{" "}
+          {finalidadHigieneOral}
+        </p>
       </div>
 
       <div className="space-y-6">
@@ -38,14 +52,13 @@ export default function HigieneOralPage() {
                 </span>
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full min-w-[48rem] table-fixed border-collapse text-left text-sm">
+                <table className="w-full min-w-[36rem] table-fixed border-collapse text-left text-sm">
                   <caption className="sr-only">
                     Procedimientos de {concepto}
                   </caption>
                   <colgroup>
                     <col className="w-36" />
                     <col />
-                    <col className="w-1/3" />
                   </colgroup>
                   <thead className="bg-[#e1f3ec] text-[#18332e]">
                     <tr>
@@ -54,9 +67,6 @@ export default function HigieneOralPage() {
                       </th>
                       <th scope="col" className="px-4 py-3 font-bold">
                         Descripción
-                      </th>
-                      <th scope="col" className="px-4 py-3 font-bold">
-                        Finalidad
                       </th>
                     </tr>
                   </thead>
@@ -71,9 +81,6 @@ export default function HigieneOralPage() {
                         </td>
                         <td className="px-4 py-3 font-medium text-foreground">
                           {procedimiento.descripcion}
-                        </td>
-                        <td className="whitespace-nowrap px-4 py-3 text-muted-foreground">
-                          {procedimiento.finalidad}
                         </td>
                       </tr>
                     ))}

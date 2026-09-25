@@ -5,6 +5,8 @@ export type ProcedimientoFacturacion = {
   finalidad: string;
 };
 
+export const finalidadHigieneOral = "14 Protección Específica";
+
 export const procedimientosHigieneOral: ProcedimientoFacturacion[] = [
   {
     codigoCups: "*997106-A",
